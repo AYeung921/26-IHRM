@@ -1,192 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Navigation</title>
-<style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  :root {
-    --bg: #f5f4ef;
-    --surface: #ffffff;
-    --surface-hover: #fbfaf7;
-    --border: #e4e1d8;
-    --border-hover: #c9c4b8;
-    --text: #1f1e1d;
-    --text-soft: #6b6862;
-    --text-faint: #8a8780;
-    --accent: #d97757;
-    --radius: 16px;
-  }
+    :root {
+      --bg: #f5f4ef;
+      --surface: #ffffff;
+      --surface-hover: #fbfaf7;
+      --border: #e4e1d8;
+      --border-hover: #c9c4b8;
+      --text: #1f1e1d;
+      --text-soft: #6b6862;
+      --text-faint: #8a8780;
+      --accent: #d97757;
+      --radius: 16px;
+    }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    padding: 48px 20px 72px;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 48px 20px 72px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  .wrap {
-    max-width: 860px;
-    margin: 0 auto;
-  }
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
 
-  h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
-    font-weight: 400;
-    letter-spacing: -0.3px;
-    margin-bottom: 40px;
-  }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      margin-bottom: 40px;
+    }
 
-  .section {
-    margin-bottom: 40px;
-  }
+    .section {
+      margin-bottom: 40px;
+    }
 
-  .section-title {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: var(--text-faint);
-    margin-bottom: 14px;
-  }
+    .section-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-faint);
+      margin-bottom: 14px;
+    }
 
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 14px;
-  }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
 
-  .card {
-    display: block;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 24px;
-    text-decoration: none;
-    color: var(--text);
-    transition: background 0.15s ease, border-color 0.15s ease;
-  }
+    .card {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
 
-  .card:hover,
-  .card:focus-visible {
-    background: var(--surface-hover);
-    border-color: var(--border-hover);
-    outline: none;
-  }
+    .card:hover,
+    .card:focus-visible {
+      background: var(--surface-hover);
+      border-color: var(--border-hover);
+      outline: none;
+    }
 
-  .card-title {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
 
-  .card-desc {
-    font-size: 14px;
-    color: var(--text-soft);
-  }
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-soft);
+    }
 
-  .card-arrow {
-    font-size: 16px;
-    color: var(--text-faint);
-    margin-top: 18px;
-    transition: color 0.15s ease, transform 0.15s ease;
-  }
+    .card-arrow {
+      font-size: 16px;
+      color: var(--text-faint);
+      margin-top: 18px;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
 
-  .card:hover .card-arrow,
-  .card:focus-visible .card-arrow {
-    color: var(--accent);
-    transform: translateX(2px);
-  }
-</style>
+    .card:hover .card-arrow,
+    .card:focus-visible .card-arrow {
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="wrap">
-  <h1>Navigation</h1>
-  <div id="app"></div>
-</div>
+  <div class="wrap">
+    <h1>Navigation</h1>
+    <div id="app"></div>
+  </div>
 
-<script>
-/* ==========================================================
-   CONFIG — edit all links and labels here
-   ========================================================== */
-const CONFIG = {
-  sections: [
-    {
-      title: "iComptify 2.0",
-      cards: [
+  <script>
+    /* ==========================================================
+       CONFIG — edit all links and labels here
+       ========================================================== */
+    const CONFIG = {
+      sections: [
         {
           title: "iComptify 2.0",
-          desc: "Goto iComptify",
-          url: "https://icomptify2.comptifyanalytics.com/login"
-        }
-      ]
-    },
-    {
-      title: "Registration",
-      cards: [
-        {
-          title: "QR Code",
-          desc: "Scan to register",
-          url: "assets/qr-code.pdf"
+          cards: [
+            {
+              title: "iComptify 2.0",
+              desc: "Goto iComptify",
+              url: "https://icomptify2.comptifyanalytics.com/login"
+            }
+          ]
         },
         {
-          title: "Forms",
-          desc: "Fill in the registration form",
-          url: "https://forms.cloud.microsoft/r/yskRXf0jjf"
-        }
-      ]
-    }
-  ,
- {
-      title: "Documents",
-      cards: [
+          title: "Documents",
+          cards: [
+            {
+              title: "Job Description - CFO",
+              desc: "",
+              url: "/assets/CFO-JD.pdf"
+            }
+          ]
+        },
         {
-          title: "Job Description - CFO",
-          desc: "",
-          url: "/assets/CFO-JD.pdf"
+          title: "Registration",
+          cards: [
+            {
+              title: "QR Code",
+              desc: "Scan to register",
+              url: "assets/qr-code.pdf"
+            },
+            {
+              title: "Forms",
+              desc: "Fill in the registration form",
+              url: "https://forms.cloud.microsoft/r/yskRXf0jjf"
+            }
+          ]
         }
+
       ]
+    };
+    /* ========================================================== */
+
+    function render() {
+      const app = document.getElementById("app");
+      const html = CONFIG.sections.map(function (section) {
+        const cards = section.cards.map(function (card) {
+          return (
+            '<a class="card" href="' + card.url + '" target="_blank" rel="noopener noreferrer">' +
+            '<div class="card-title">' + card.title + '</div>' +
+            '<div class="card-desc">' + card.desc + '</div>' +
+            '<div class="card-arrow">&rarr;</div>' +
+            '</a>'
+          );
+        }).join("");
+
+        return (
+          '<div class="section">' +
+          '<div class="section-title">' + section.title + '</div>' +
+          '<div class="cards">' + cards + '</div>' +
+          '</div>'
+        );
+      }).join("");
+
+      app.innerHTML = html;
     }
-]
-};
-/* ========================================================== */
 
-function render() {
-  const app = document.getElementById("app");
-  const html = CONFIG.sections.map(function (section) {
-    const cards = section.cards.map(function (card) {
-      return (
-        '<a class="card" href="' + card.url + '" target="_blank" rel="noopener noreferrer">' +
-          '<div class="card-title">' + card.title + '</div>' +
-          '<div class="card-desc">' + card.desc + '</div>' +
-          '<div class="card-arrow">&rarr;</div>' +
-        '</a>'
-      );
-    }).join("");
-
-    return (
-      '<div class="section">' +
-        '<div class="section-title">' + section.title + '</div>' +
-        '<div class="cards">' + cards + '</div>' +
-      '</div>'
-    );
-  }).join("");
-
-  app.innerHTML = html;
-}
-
-render();
-</script>
+    render();
+  </script>
 
 </body>
+
 </html>
